@@ -1,10 +1,11 @@
 import React, { useRef, useContext } from "react";
 import { MapContainer, TileLayer, Marker, Popup, FeatureGroup } from "react-leaflet";
 import { EditControl } from "react-leaflet-draw";
+import Banner from "../stories/Banner";
 import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
-import L from "leaflet";
 import './Map.css'
+import L from "leaflet";
 import { GlobalContext } from "../Context/GlobalProvider";
 const Map: React.FC = () => {
     const { defaultAppState } = useContext(GlobalContext);
@@ -15,11 +16,11 @@ const Map: React.FC = () => {
     const ZOOM_LEVEL = defaultAppState[0].ZOOM_LEVEL;
 
     return (
-        <div className="flex flex-col items-center min-h-screen p-4 bg-gray-100">
+        <div className="flex flex-col items-center min-h-screen p-4 bg-[#c8b6ff]">
             <div className="text-center mb-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-                    React Leaflet - Polygon Drawing with Leaflet Draw
-                </h2>
+                <Banner variant = "congrats" >
+                    Polygon Drawing - React Leaflet
+                </Banner>
             </div>
             <div className="w-full h-full max-w-screen-lg">
                 <MapContainer
@@ -33,7 +34,7 @@ const Map: React.FC = () => {
                         <EditControl
                             position="topright"
                             draw={{
-                                rectangle: false, // Disable rectangle drawing if you only want polygons
+                                rectangle: false, 
                             }}
                         />
                     </FeatureGroup>
