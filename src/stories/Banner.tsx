@@ -74,7 +74,7 @@ const Banner: React.FC<BannerProps> = ({ variant = "info", children }) => {
         color: "#fff",
         ...variantStyles[variant],
         textAlign: "left",
-        lineHeight: "50px", // Center text vertically
+        lineHeight: "20px", // Center text vertically
       })}
     >
       <span css={beforeStyles} />
